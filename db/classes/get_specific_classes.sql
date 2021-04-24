@@ -1,0 +1,1 @@
+SELECT * FROM classes WHERE day_of_the_week = ${day_of_the_week}
