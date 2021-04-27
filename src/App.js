@@ -1,10 +1,11 @@
-import logo from './logo.svg';
+// import LandingLogin from './components/LandingLogin'
+import routes from './routes';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-    APP JS
+     {routes}
     </div>
   );
 }

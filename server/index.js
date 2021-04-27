@@ -59,7 +59,7 @@ app.get('/api/instructors',instructorsCtrl.getAllInstructors);
 
 // //Bookings Endpoints
 app.get('/api/bookings',bookingsCtrl.getBookings);
-//app.post('/api/bookings',bookingsCtrl.makeBookings);
+app.post('/api/booking',bookingsCtrl.makeBookings);
 app.delete('/api/bookings/:booking_id',bookingsCtrl.cancel);
 
   
