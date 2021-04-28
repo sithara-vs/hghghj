@@ -1,0 +1,32 @@
+.home {
+  /* height:1000px;
+  width: 1300px; */
+}
+p {
+  position: relative;
+  top: 240px;
+}
+video {
+  object-fit:cover;
+  /* position:relative; */
+  overflow: hidden;
+  /* z-index: 0; */
+  /* opacity: .9; */
+  height :600px;
+  
+  width:100vw
+}
+.vid{
+  background-color:white;
+}
+.header{
+  position:relative;
+  z-index: 1;
+}
+p{
+  color: aliceblue;
+  letter-spacing: 5px;
+  font-size: larger;
+  font-family: cursive;
+  font-weight: 600;
+}

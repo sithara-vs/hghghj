@@ -15,6 +15,12 @@ module.exports = {
       return res.status(403).send("User not logged in");
     }
   },
+//get the class data with the class id from body.
+// figure out the price based on the the num of participants and rate.
+//make the bookings insertion with the data from body and the missing data from the class data that was retrieved.
+//return the required row joined with the class table
+//put paid as false
+
 
   makeBookings: async (req, res) => {
     const db = req.app.get("db");
@@ -23,7 +29,7 @@ module.exports = {
       const {
         class_id,
         no_of_participants,
-        total_price,
+        // total_price,
         // day_of_the_week,
       } = req.body;
       try {

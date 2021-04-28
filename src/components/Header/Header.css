@@ -1,0 +1,55 @@
+.header{
+ display: flex;
+ flex-direction: row;
+ justify-content: space-around;
+ height:150px;
+ width:100%;
+ background-color: white;
+ position: fixed;
+ padding-top:0px;
+ margin:0px;
+ /* background-color: #D2E6EA; */
+ background-image: linear-gradient(#b0ddf3, white);
+
+}
+.title{
+    display: flex;
+    flex-direction: column;
+}
+
+h1{
+    position: relative;
+    left: 340px;
+    height: 50px;
+    letter-spacing: 12px;
+    text-shadow: 2px 2px 8px grey;
+}
+.login{
+    display: flex;
+    flex-direction: row;
+}
+.nav{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    left: 300px;
+    width:650px;
+    /* background-color: blue; */
+}
+ul{
+    letter-spacing: 2px;
+}
+img{
+    height:100px;
+    width:100px;
+}
+.logo{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    /* left: 20px; */
+    top:30px;
+    width:1000px
+    
+}
