@@ -28,18 +28,29 @@ module.exports = {
       const { user_id } = req.session.user;
       const {
         class_id,
+        price,
         no_of_participants,
         // total_price,
         // day_of_the_week,
       } = req.body;
+
+      let totalPrice = no_of_participants * price ;
+      console.log("Price: ",price )
+      console.log("Participants: ",no_of_participants )
+      console.log("Total: ",totalPrice )
+      
       try {
         const bookings = await db.bookings.make_bookings(
-          user_id,
+          [user_id,
           class_id,
           no_of_participants,
-          total_price
+          totalPrice]
           // day_of_the_week
         );
+
+//Bookings totalPrice gets converted in to a string when inserted in to the table.
+
+
         res.status(200).send(bookings);
       } catch (err) {
         console.log(err);
