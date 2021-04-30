@@ -47,7 +47,7 @@ app.post('/api/register', authCtrl.register);
 app.post('/api/login', authCtrl.login);
 app.delete('/api/logout', authCtrl.logout);
 app.post('/api/delete', authCtrl.delete);
-app.put('/api/reset_password',authCtrl.reset_password)
+// app.put('/api/reset_password',authCtrl.reset_password)
 
 // //Class Endpoints
 app.get('/api/classes',classesCtrl.getAllClasses);
@@ -62,4 +62,7 @@ app.get('/api/bookings',bookingsCtrl.getBookings);
 app.post('/api/booking',bookingsCtrl.makeBookings);
 app.delete('/api/bookings/:booking_id',bookingsCtrl.cancel);
 
+//User settings Endpoint
+app.put('/api/reset_password',authCtrl.reset_password)
+app.put('/api/reset_email',authCtrl.reset_email)
   

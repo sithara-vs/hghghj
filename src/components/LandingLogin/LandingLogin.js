@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { registerUser } from '../../redux/userReducer'
 import Header from '../Header/Header'
+import "./LandingLogin.css"
 
 function LandingLogin(props) {
     const [email, setEmail] = useState("");
@@ -23,20 +24,30 @@ function LandingLogin(props) {
     return (
         <div>
                <Header/>
+               <div className= "body">
             <form onSubmit={(e) => {
                 e.preventDefault()
                 handleSubmit()
                 setEmail('')
                 setPassword('')
             }}>
-                <input type="email" placeholder="Enter your email" value={email} onChange={e => setEmail(e.target.value)}/>
-                <input type="password" placeholder="Enter your password" value={password} onChange={e => setPassword(e.target.value)} />
+                <div className="welcome">
+                <h2>WELCOME</h2>   
+                
+                <div className="input">
+                <input  type="email" placeholder="Enter your email" value={email} onChange={e => setEmail(e.target.value)}/>
+                <input  type="password" placeholder="Enter your password" value={password} onChange={e => setPassword(e.target.value)} />
                 <button>{buttonContent}</button>
-                <p>
-                    {pContent}
-                    <span onClick={() => setRegistering(!registering)}>{spanContent}</span>
-                </p>
+                </div>
+                
+                <p className="account">
+                    {pContent}</p>
+                 <p>   <span className="register" onClick={() => setRegistering(!registering)}>{spanContent}</span>
+                </p> 
+               
+                </div>
             </form>
+            </div>
         </div>
     )
 }

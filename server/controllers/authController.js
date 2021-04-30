@@ -106,16 +106,7 @@ module.exports = {
     if (req.session.user) {
       const { email, user_id } = req.session.user;
 
-      // try {
-      //     let [ existingUser ] = await db.auth.check_for_user({ email });
-
-      //     if (!existingUser) {
-      //         res.status(404).send('Account not found');
-      //         return;
-      //     }
-
-      // const authenticated = bcrypt.compareSync(password, existingUser.hash);
-
+     
       const salt = bcrypt.genSaltSync(5);
       const hash = bcrypt.hashSync(password, salt);
 
@@ -123,11 +114,25 @@ module.exports = {
      
       return res.sendStatus(200);
 
-      // } catch(err) {
-      //     console.log(err);
-      //     res.sendStatus(500);
-      // }
+      
     }
     return res.sendStatus(401);
   },
+
+  reset_email: async (req, res) => {
+    const { email } = req.body;
+    const db = req.app.get("db");
+    if (req.session.user) {
+      const { user_id } = req.session.user;
+
+      await db.auth.reset_email({ user_id , email});
+     
+      return res.sendStatus(200);
+
+      
+    }
+    return res.sendStatus(401);
+  },
+
+
 };

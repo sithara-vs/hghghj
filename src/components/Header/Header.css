@@ -9,7 +9,7 @@
  padding-top:0px;
  margin:0px;
  /* background-color: #D2E6EA; */
- background-image: linear-gradient(#b0ddf3, white);
+ background-image: linear-gradient(#caf1f8, white);
 
 }
 .title{
@@ -19,7 +19,7 @@
 
 h1{
     position: relative;
-    left: 340px;
+    left: 390px;
     height: 50px;
     letter-spacing: 12px;
     text-shadow: 2px 2px 8px grey;
