@@ -6,6 +6,7 @@ import { register, login } from "../../redux/userReducer";
 import Header from "../Header/Header";
 import HeaderLogin from "../Header/HeaderLogin";
 import "./LandingLogin.css";
+import member from'./assets/member.png'
 
 function LandingLogin(props) {
   const [email, setEmail] = useState("");
@@ -44,22 +45,30 @@ function LandingLogin(props) {
           }}
         >
           <div className="welcome">
-            <h2 className="h2landingclass">WELCOME</h2>
+              {/* <img src="./member.png">Member Login</img> */}
+              <img
+              className="member-icon"
+              
+              src={member }
+              alt="member-icon" 
+              
+            />
+            <h2 className="h2landingclass">Member Login</h2>
 
             <div className="input">
-              <input
+              <input className = "input-box"
                 type="email"
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-              <input
+              <input className = "input-box"
                 type="password"
                 placeholder="Enter your password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <button>{buttonContent}</button>
+              <button className="button">{buttonContent}</button>
             </div>
             <div className="account">
               <p>{pContent}</p>

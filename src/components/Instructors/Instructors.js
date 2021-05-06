@@ -20,17 +20,18 @@ export default class PersonList extends React.Component {
       <div className="bod">
         <Header />
         <div>
-          <p>
+          <h1 className="meet"> Meet our Instructors!</h1>
+          <div className="layout">
             {this.state.instructors.map((instructors) => {
               return (
                 <p classname="instructors">
-                  <img src={instructors.image} />
+                  <img className="layout1" src={instructors.image} />
 
-                  <p classname="instructors">{instructors.about}</p>
+                  <p className="about">{instructors.about}</p>
                 </p>
               );
             })}
-          </p>
+          </div>
         </div>
       </div>
     );
