@@ -1,55 +1,83 @@
-import React, { useState } from 'react';
-import { connect } from 'react-redux';
-import { registerUser } from '../../redux/userReducer'
-import Header from '../Header/Header'
-import "./LandingLogin.css"
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { Link, withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+import { register, login } from "../../redux/userReducer";
+import Header from "../Header/Header";
+import HeaderLogin from "../Header/HeaderLogin";
+import "./LandingLogin.css";
 
 function LandingLogin(props) {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [registering, setRegistering] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [registering, setRegistering] = useState(false);
 
-    const buttonContent = registering ? "Register" : "Login";
-    const pContent = registering ? "Already have an account?" : "Don't have an account?";
-    const spanContent = registering ? "Click here to login" : "Click here to register";
+  const buttonContent = registering ? "Register" : "Login";
+  const pContent = registering
+    ? "Already have an account?"
+    : "Don't have an account?";
+  const spanContent = registering
+    ? "Click here to login"
+    : "Click here to register";
 
-    function handleSubmit() {
-        if(registering) {
-            props.registerUser(email, password)
-        }
-
-        // props.loginUser(email, password)
+  function handleSubmit() {
+    if (registering) {
+      props.register(email, password);
+    }
+    if (!registering) {
+      props.login(email, password);
     }
 
-    return (
-        <div>
-               <Header/>
-               <div className= "body">
-            <form onSubmit={(e) => {
-                e.preventDefault()
-                handleSubmit()
-                setEmail('')
-                setPassword('')
-            }}>
-                <div className="welcome">
-                <h2>WELCOME</h2>   
-                
-                <div className="input">
-                <input  type="email" placeholder="Enter your email" value={email} onChange={e => setEmail(e.target.value)}/>
-                <input  type="password" placeholder="Enter your password" value={password} onChange={e => setPassword(e.target.value)} />
-                <button>{buttonContent}</button>
-                </div>
-                
-                <p className="account">
-                    {pContent}</p>
-                 <p>   <span className="register" onClick={() => setRegistering(!registering)}>{spanContent}</span>
-                </p> 
-               
-                </div>
-            </form>
+    // props.loginUser(email, password)
+  }
+
+  return (
+    <div>
+      <HeaderLogin />
+      <div className="body">
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleSubmit();
+            setEmail("");
+            setPassword("");
+          }}
+        >
+          <div className="welcome">
+            <h2 className="h2landingclass">WELCOME</h2>
+
+            <div className="input">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <input
+                type="password"
+                placeholder="Enter your password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <button>{buttonContent}</button>
             </div>
-        </div>
-    )
+            <div className="account">
+              <p>{pContent}</p>
+              <p>
+                {" "}
+                <span
+                  className="register"
+                  onClick={() => setRegistering(!registering)}
+                >
+                  {spanContent}
+                </span>
+              </p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
 }
 
 // const mapStateToProps = reduxState => {
@@ -59,7 +87,8 @@ function LandingLogin(props) {
 // }
 
 const mapDispatchToProps = {
-    registerUser
-}
+  register,
+  login,
+};
 
 export default connect(null, mapDispatchToProps)(LandingLogin);

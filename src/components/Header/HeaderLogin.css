@@ -1,0 +1,79 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height:150px;
+    width:100%;
+    background-color: white;
+    position: fixed;
+    padding-top:0px;
+    margin:0px;
+    /* background-color: #D2E6EA; */
+    background-image: linear-gradient(#caf1f8, white);
+   
+   }
+   .title{
+       display: flex;
+       flex-direction: column;
+   }
+   
+   .h1loginclass{
+       position: relative;
+       left: 390px;
+       height: 50px;
+       letter-spacing: 12px;
+       text-shadow: 2px 2px 8px grey;
+   }
+   .login{
+       display: flex;
+       flex-direction: row;
+   }
+   .nav{
+       display:flex;
+       flex-direction: row;
+       justify-content: space-between;
+       position: relative;
+       left: 300px;
+       width:650px;
+       top:0px;
+       /* background-color: blue; */
+   }
+   .ulloginclass{
+       letter-spacing: 2px;
+   }
+   img{
+       height:100px;
+       width:100px;
+   }
+   .logo{
+       display: flex;
+       flex-direction: row;
+       position: relative;
+       /* left: 20px; */
+       top:30px;
+       width:1000px
+       
+   }
+   .star {
+    width: 0;
+    height: 0;
+    border-left: 12.5px solid transparent;
+    border-right: 12.5px solid transparent;
+    border-bottom: 25px solid rgb(63, 61, 221);
+    position: relative;
+  }
+  .star:after {
+    width: 0;
+    height: 0;
+    border-left: 12.5px solid transparent;
+    border-right: 12.5px solid transparent;
+    border-top: 25px solid rgb(63, 61, 221);
+    position: absolute;
+    content: "";
+    top: 7.5px;
+    left: -12.5px;
+  }
+article{
+    color: grey;
+    font-size: smaller;
+}

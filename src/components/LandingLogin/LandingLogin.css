@@ -1,30 +1,38 @@
 .body{
-    background-image: linear-gradient(#7EDDF2, white);
+    background-image: linear-gradient(#50A1D3, white);
+    width:100vw;
+    height:100vh;
+    
 }
 
 .account{
     color: rgb(64, 64, 202);
     position: relative;
-    top:150px;
+    display:flex;
+    flex-direction: row;
+    top:140px;
 }
-span{
+.register{
     color:red;
     position: relative;
+    top:0px;
     
     
 }
-h2{
+.h2landingclass{
     font-family: cursive;
     position: relative;
-    top:100px
+    /* bottom:200px; */
+    top:50px;
+    z-index: 1;
 
 }
 .welcome{
     position: relative;
-    left:450px;
-    top:30px;
-    width: 400px;
-    height: 550px; 
+    left:500px;
+    top:50px;
+    width: 300px;
+    height: 350px; 
     border-radius: 25px; 
     padding: 50px;
     border: 1px solid rgb(46, 45, 45);
@@ -54,11 +62,4 @@ h2{
     height:130px
 
     
-}
-input{
-    /* border-radius: 15px;  */
-    width: fit-content;
-}
-button{
-    width: fit-content;
 }

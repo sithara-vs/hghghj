@@ -1,20 +1,31 @@
-.home {
-  /* height:1000px;
-  width: 1300px; */
+
+
+body{
+  background-image: linear-gradient(#7EDDF2, white);
+  
 }
-p {
-  position: relative;
-  top: 240px;
-}
+
 video {
   object-fit:cover;
-  /* position:relative; */
-  overflow: hidden;
-  /* z-index: 0; */
-  /* opacity: .9; */
-  height :500px;
+  height :520px;
+  z-index: 0;
   
-  width:100vw
+  width:100vw;
+  position:relative;
+  top:20px;
+}
+.frontpage{
+  display:flex;
+  justify-content: left;
+  color:white;
+  position:relative;
+  /* bottom:20px; */
+  top:270px;
+  right:600px;
+  width:1000px;
+  height:250px;
+  font-family: cursive;
+  /* background-color: tomato; */
 }
 .vid{
   background-color:white;
@@ -22,11 +33,11 @@ video {
 .header{
   position:relative;
   z-index: 1;
+  height :250px
 }
-p{
-  color: aliceblue;
-  letter-spacing: 5px;
-  font-size: larger;
-  font-family: cursive;
-  font-weight: 600;
+
+
+.trial{
+  display: flex;
+  flex-direction: column;
 }
