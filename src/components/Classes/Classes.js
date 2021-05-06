@@ -1,44 +1,9 @@
-// import React from 'react'
-// import Header from '../Header/Header'
-
-// export default function Classes() {
-//     return (
-//         <div>
-//              <Header/>
-
-//         Classes!
-
-//              </div>
-//     )
-// }
-
-// import React from 'react'
-// import Header from '../Header/Header'
-// import axios from 'axios'
-// import './Instructors.css'
-
-// export default function Instructors() {
-
-//     const getInstructors = () => {
-//         axios.get('/api/instructors/')
-//       }
-
-//     return (
-//         <div>
-//                 <Header/>
-//                 <div className="instructors_body">
-//                 These are our instructors !
-
-//                 </div>
-
-//         </div>
-//     )
-// }
 
 import React from "react";
 import Header from "../Header/Header";
 import axios from "axios";
 import "./Classes.css";
+import search from './search.png'
 
 export default class PersonList extends React.Component {
   state = {
@@ -56,18 +21,48 @@ export default class PersonList extends React.Component {
     return (
       <div>
         <Header />
-        <ul>
+        <h1>Our Classes</h1>
+        <span>
+        <input className="search" placeholder="search by day of the week" />
+        <button classname="searchbutton">
+        <img className="searchicon" src={search} alt="search"/>
+        </button>
+        </span>
+        <span>
+          <p> day</p>
+          <p> description</p>
+          <p> participants</p>
+          <p> price</p>
+        </span>
+        <p className="classes">
           {this.state.classes.map((classes) => {
             return (
-              <li>
-                {classes.day_of_the_week}
-                <p> {classes.description}</p>
+              <li className="class">
+                <div className="day">{classes.day_of_the_week}</div>
+                <div className="description">
+                  <p> {classes.description}</p>
+                </div>
+                <div className="button-">
+                  <button className=" select1" type="button">
+                    -
+                  </button>
+                </div>
                 <p>{classes.participants}</p>
+                <div className="button-">
+                  <button className=" select2" type="button">
+                    +
+                  </button>
+                </div>
                 <p>{classes.price}</p>
+                <div className="buttonbook">
+                  <button className="book" type="button">
+                    BOOK
+                  </button>
+                </div>
               </li>
             );
           })}
-        </ul>
+        </p>
       </div>
     );
   }

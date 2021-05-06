@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '../Header/Header'
 import './Contact.css'
+import yogaicon from './assets/yoga.png'
 
 
 export default function Contact() {
@@ -17,6 +18,8 @@ export default function Contact() {
 
 </div>
 <div className="address">
+    <img className="yogaicon" src = {yogaicon} alt = "yoga icon"/>
+    <div className="right">
     <p className="add"> YOGI'S YOGA</p>
     
     <p className="add"> 73 Maple Street</p>
@@ -25,7 +28,7 @@ export default function Contact() {
     <p className="add"> 45567</p>
     <p className="add"> Ph no: 234-234-1234</p>
     <p className="add"> email: asd@gmail.com</p>
-
+    </div>
 </div>
 
 </div>
