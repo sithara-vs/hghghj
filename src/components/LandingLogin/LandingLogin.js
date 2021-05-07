@@ -97,7 +97,9 @@ function LandingLogin(props) {
 
 const mapDispatchToProps = {
   register,
+
   login,
+  
 };
 
 export default connect(null, mapDispatchToProps)(LandingLogin);

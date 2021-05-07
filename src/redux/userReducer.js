@@ -43,13 +43,21 @@ export function register(email, password) {
   };
 }
 
+// export function logout(){
+//     return{
+//         type:LOGOUT,
+//         payload:axios.delete('/api/logout')
+//     }
+// }
+
 export default function reducer(state = initialState, action) {
   switch (action.type) {
     case REGISTER + "_PENDING":
       return { ...state, loading: true };
-    case REGISTER + "_FULFILLED":
+    case REGISTER + "_FULFILLED":{
       const { user_id, email } = action.payload.data;
-      return { ...state, loading: false, user_id: user_id, email };
+    return { ...state, loading: false, user_id: user_id, email };
+    }
     case REGISTER + "_REJECTED":
       return {
         ...state,
@@ -57,17 +65,36 @@ export default function reducer(state = initialState, action) {
         errorMessage: action.payload.data.message,
       };
 
+    case LOGIN + "_PENDING":
+      return { ...state, loading: true };
+    case LOGIN + "_FULFILLED":
+      const { user_id, email } = action.payload.data;
+      return { ...state, loading: false, user_id: user_id, email };
+    case LOGIN + "_REJECTED":
+      return {
+        ...state,
+        loading: false,
+        errorMessage: action.payload.data.message,
+      };
+
+      
+                // case LOGOUT + "_PENDING":
+                //     return {...state, loading:true}
+                // case LOGOUT + "_FULFILLED":
+                //     const{user_id,email}= action.payload.data
+                //     return {...state,loading:false,user_id:user_id,email}
+                // case LOGOUT + "_REJECTED":
+                //     return {...state,loading:false,errorMessage:action.payload.data.message,
+                    
+                //     };
+      
+
     default:
       return state;
   }
 }
 
-// export function logout(){
-//     return{
-//         type:LOGOUT,
-//         payload:axios.delete('/api/logout')
-//     }
-// }
+
 
 // export default function reducer(state = initialState,action){
 //     switch(action.type) {

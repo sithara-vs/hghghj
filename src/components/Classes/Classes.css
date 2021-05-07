@@ -16,7 +16,7 @@ width:800px;
 .day{
    height:40px;
    width:60px;
-   border:1px solid  violet;
+   /* border:1px solid  violet; */
    display: flex;
    align-items:center;
 }
@@ -24,7 +24,7 @@ width:800px;
 .description{
     height:40px;
     width:180px;
-    border:1px solid  violet;
+    /* border:1px solid  violet; */
     display: flex;
     align-items:center;
 
@@ -32,7 +32,7 @@ width:800px;
 .button-{
     height:40px;
     width:40px;
-    border:1px solid  violet;
+    /* border:1px solid  violet; */
     display: flex;
     align-items:center;
     
@@ -51,7 +51,7 @@ width:800px;
 .buttonbook{
     height:40px;
     width:80px;
-    border:1px solid  violet;
+    /* border:1px solid  violet; */
     display: flex;
     align-items:center
 }
