@@ -5,9 +5,10 @@ import axios from "axios";
 import "./Classes.css";
 import search from './search.png'
 
-export default class PersonList extends React.Component {
+export default class Clasees extends React.Component {
   state = {
     classes: [],
+    
   };
 
   componentDidMount() {
@@ -43,13 +44,14 @@ export default class PersonList extends React.Component {
                   <p> {classes.description}</p>
                 </div>
                 <div className="button-">
-                  <button className=" select1" type="button">
+                  <button className=" select1" type="button" on onClick={classes.participants-1}>
                     -
                   </button>
+                  
                 </div>
                 <p>{classes.participants}</p>
                 <div className="button-">
-                  <button className=" select2" type="button">
+                  <button className=" select2" type="button" on onClick={classes.participants+1}>
                     +
                   </button>
                 </div>

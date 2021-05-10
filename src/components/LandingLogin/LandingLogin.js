@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link, withRouter } from "react-router-dom";
+import { Link, withRouter ,Redirect} from "react-router-dom";
 import { connect } from "react-redux";
 import { register, login } from "../../redux/userReducer";
 import Header from "../Header/Header";
 import HeaderLogin from "../Header/HeaderLogin";
 import "./LandingLogin.css";
-import member from'./assets/member.png'
+import member from "./assets/member.png";
+
 
 function LandingLogin(props) {
   const [email, setEmail] = useState("");
@@ -28,13 +29,18 @@ function LandingLogin(props) {
     if (!registering) {
       props.login(email, password);
     }
-
-    // props.loginUser(email, password)
   }
 
+
+
+
+
+  if(props.user.email) return <Redirect to="/"/>
+  
+  
   return (
     <div>
-      <HeaderLogin />
+      <Header />
       <div className="body">
         <form
           onSubmit={(e) => {
@@ -45,24 +51,20 @@ function LandingLogin(props) {
           }}
         >
           <div className="welcome">
-              {/* <img src="./member.png">Member Login</img> */}
-              <img
-              className="member-icon"
-              
-              src={member }
-              alt="member-icon" 
-              
-            />
+            {/* <img src="./member.png">Member Login</img> */}
+            <img className="member-icon" src={member} alt="member-icon" />
             <h2 className="h2landingclass">Member Login</h2>
 
             <div className="input">
-              <input className = "input-box"
+              <input
+                className="input-box"
                 type="email"
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-              <input className = "input-box"
+              <input
+                className="input-box"
                 type="password"
                 placeholder="Enter your password"
                 value={password}
@@ -89,17 +91,13 @@ function LandingLogin(props) {
   );
 }
 
-// const mapStateToProps = reduxState => {
-//     return {
-
-//     }
-// }
+const mapStateToProps = reduxState => reduxState
+    
 
 const mapDispatchToProps = {
   register,
 
   login,
-  
 };
 
-export default connect(null, mapDispatchToProps)(LandingLogin);
+export default connect(mapStateToProps, mapDispatchToProps)(LandingLogin);

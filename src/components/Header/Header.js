@@ -2,7 +2,10 @@ import React from "react";
 import "./Header.css";
 import logo from "./logo.png";
 import { Link } from "react-router-dom";
-export default function Header() {
+import {connect} from "react-redux"
+import {logout} from "../../redux/userReducer";
+
+function Header(props) {
   return (
     <div className="header">
       <div className="title">
@@ -27,12 +30,24 @@ export default function Header() {
           </ul>
         </li>
       </div>
+      {props.user.email ? <Link to = '/'><p>logout</p> </Link>  : <Link to = '/login'><p>Login/Register</p></Link>}
+      <br></br>
+      {props.user.email ? <Link to = '/users'><p className="star">.</p> </Link>  : <Link to = '/login'><p></p></Link>}
 
       <li className="login">
-        <ul className="ulclass">
+        {/* <ul className="ulclass">
           <Link to="/login">Login/Register</Link>
-        </ul>
+        </ul> */}
       </li>
     </div>
   );
 }
+
+const mapStateToProps = reduxState => reduxState
+    
+
+const mapDispatchToProps = {
+  logout
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
