@@ -33,9 +33,7 @@ export default function Header() {
       <li className="login">
         <ul className="ulloginclass">
           <h5
-            // onClick={() => {
-            //   logout();
-            // }}
+            
           >
             Log Out
           </h5>
@@ -44,9 +42,7 @@ export default function Header() {
       <Link to="/users">
         <div className="star">
           <article>
-            {/* <Link to = '/users'>
-               Click
-               </Link> */}
+            
           </article>
         </div>
       </Link>

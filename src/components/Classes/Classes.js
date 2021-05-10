@@ -10,6 +10,7 @@ export default class Clasees extends React.Component {
     classes: [],
     
   };
+  
 
   componentDidMount() {
     axios.get("/api/classes").then((res) => {
@@ -44,14 +45,14 @@ export default class Clasees extends React.Component {
                   <p> {classes.description}</p>
                 </div>
                 <div className="button-">
-                  <button className=" select1" type="button" on onClick={classes.participants-1}>
+                  <button className=" select1" type="button" onClick={classes.participants-1}>
                     -
                   </button>
                   
                 </div>
                 <p>{classes.participants}</p>
                 <div className="button-">
-                  <button className=" select2" type="button" on onClick={classes.participants+1}>
+                  <button className=" select2" type="button" onClick={classes.participants+1}>
                     +
                   </button>
                 </div>

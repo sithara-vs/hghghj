@@ -2,8 +2,8 @@ import React from "react";
 import "./Header.css";
 import logo from "./logo.png";
 import { Link } from "react-router-dom";
-import {connect} from "react-redux"
-import {logout} from "../../redux/userReducer";
+import { connect } from "react-redux";
+import { logout } from "../../redux/userReducer";
 
 function Header(props) {
   return (
@@ -30,9 +30,25 @@ function Header(props) {
           </ul>
         </li>
       </div>
-      {props.user.email ? <Link to = '/'><p>logout</p> </Link>  : <Link to = '/login'><p>Login/Register</p></Link>}
+      {props.user.email ? (
+        <Link to="/">
+          <p onClick={props.logout}>logout</p>{" "}
+        </Link>
+      ) : (
+        <Link to="/login">
+          <p>Login/Register</p>
+        </Link>
+      )}
       <br></br>
-      {props.user.email ? <Link to = '/users'><p className="star">.</p> </Link>  : <Link to = '/login'><p></p></Link>}
+      {props.user.email ? (
+        <Link to="/users">
+          <p className="star">.</p>{" "}
+        </Link>
+      ) : (
+        <Link to="/login">
+          <p></p>
+        </Link>
+      )}
 
       <li className="login">
         {/* <ul className="ulclass">
@@ -43,11 +59,10 @@ function Header(props) {
   );
 }
 
-const mapStateToProps = reduxState => reduxState
-    
+const mapStateToProps = (reduxState) => reduxState;
 
 const mapDispatchToProps = {
-  logout
+  logout,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);
