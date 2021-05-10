@@ -50,17 +50,16 @@ export function update_email(email) {
   };
 }
 
-// export function update_password(password){
-//     return{
-//         type:UPDATE_PASSWORD,
-//         payload:axios.put('/api/reset_password',{password})
-//     }
-// }
+export function update_password(password){
+    return{
+        type:UPDATE_PASSWORD,
+        payload:axios.put('/api/reset_password',{password})
+    }
+}
 
 
 
 export default function reducer(state = initialState, action) {
-  const { user_id, email } = action.payload.data;
   switch (action.type) {
     case REGISTER + "_PENDING":
       return { ...state, loading: true };
@@ -82,7 +81,7 @@ export default function reducer(state = initialState, action) {
     case LOGIN + "_PENDING":
       return { ...state, loading: true };
     case LOGIN + "_FULFILLED":
-      // const { user_id, email } = action.payload.data;
+      const { user_id, email } = action.payload.data;
       return { ...state, loading: false, user_id: user_id, email };
     case LOGIN + "_REJECTED":
       return {
@@ -114,17 +113,17 @@ export default function reducer(state = initialState, action) {
     //     errorMessage: action.payload.data.message,
     //   };
 
-    case UPDATE_EMAIL + "_PENDING":
-      return { ...state, loading: true };
-    case UPDATE_EMAIL + "_FULFILLED":
-      // const { user_id, email } = action.payload.data;
-      return { ...state, loading: false, user_id, email };
-    case UPDATE_EMAIL + "_REJECTED":
-      return {
-        ...state,
-        loading: false,
-        errorMessage: action.payload.data.message,
-      };
+    // case UPDATE_EMAIL + "_PENDING":
+    //   return { ...state, loading: true };
+    // case UPDATE_EMAIL + "_FULFILLED":
+    //   const { user_id, email } = action.payload.data;
+    //   return { ...state, loading: false, user_id: user_id, email };
+    // case UPDATE_EMAIL + "_REJECTED":
+    //   return {
+    //     ...state,
+    //     loading: false,
+    //     errorMessage: action.payload.data.message,
+    //   };
 
     default:
       return state;

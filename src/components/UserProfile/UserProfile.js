@@ -2,9 +2,22 @@ import React from "react";
 
 import "./UserProfile.css";
 import Header from "../Header/Header";
-import HeaderLogin from "../Header/HeaderLogin";
+// import { update_email } from "../../redux/userReducer";
 
-export default function UserProfile() {
+
+
+
+
+export default function UserProfile(props) {
+  // const [email, setEmail] = useState("");
+  // const [password, setPassword] = useState("");
+
+
+  // function handleSubmit() {
+  //   if (props.user.email) {
+  //     props.update_email(email);
+  //   }
+
   return (
     <div>
       <Header />
