@@ -124,10 +124,11 @@ module.exports = {
     const db = req.app.get("db");
     if (req.session.user) {
       const { user_id } = req.session.user;
+      // let [newUser] = await db.auth.reset_email({ user_id,email});
 
       await db.auth.reset_email({ user_id , email});
      
-      return res.sendStatus(200);
+      return res.sendStatus(200).send("Your email has been updated");
 
       
     }

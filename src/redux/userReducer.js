@@ -50,22 +50,25 @@ export function update_email(email) {
   };
 }
 
-export function update_password(password){
-    return{
-        type:UPDATE_PASSWORD,
-        payload:axios.put('/api/reset_password',{password})
-    }
+export function update_password(password) {
+  return {
+    type: UPDATE_PASSWORD,
+    payload: axios.put("/api/reset_password", { password }),
+  };
 }
-
-
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
     case REGISTER + "_PENDING":
       return { ...state, loading: true };
     case REGISTER + "_FULFILLED": {
-      const { user_id, email } = action.payload.data;
-      return { ...state, loading: false, user_id: user_id, email };
+      // let { user_id, email } = action.payload.data;
+      return {
+        ...state,
+        loading: false,
+        user_id: action.payload.data.user_id,
+        email: action.payload.data.email,
+      };
     }
     case REGISTER + "_REJECTED":
       return {
@@ -81,8 +84,13 @@ export default function reducer(state = initialState, action) {
     case LOGIN + "_PENDING":
       return { ...state, loading: true };
     case LOGIN + "_FULFILLED":
-      const { user_id, email } = action.payload.data;
-      return { ...state, loading: false, user_id: user_id, email };
+      // let { user_id, email } = action.payload.data;
+      return {
+        ...state,
+        loading: false,
+        user_id: action.payload.data.user_id,
+        email: action.payload.data.email,
+      };
     case LOGIN + "_REJECTED":
       return {
         ...state,
@@ -100,30 +108,37 @@ export default function reducer(state = initialState, action) {
         loading: false,
         errorMessage: action.payload.data.message,
       };
+    //   case DELETE + "_PENDING":
+    //     return {...state, loading:true}
+    // case DELETE + "_FULFILLED":
+    //     const{user_id,email}= action.payload.data
+    //     return {...state,loading:false,user_id:user_id,email}
+    // case DELETE + "_REJECTED":
+    //     return {...state,loading:false,errorMessage:action.payload.data.message}
 
-    // case UPDATE_PASSWORD + "_PENDING":
-    //   return { ...state, loading: true };
-    // case UPDATE_PASSWORD + "_FULFILLED":
-    //   const { user_id, password } = action.payload.data;
-    //   return { ...state, loading: false, user_id: user_id, password };
-    // case UPDATE_PASSWORD + "_REJECTED":
-    //   return {
-    //     ...state,
-    //     loading: false,
-    //     errorMessage: action.payload.data.message,
-    //   };
+    case UPDATE_PASSWORD + "_PENDING":
+      return { ...state, loading: true };
+    case UPDATE_PASSWORD + "_FULFILLED":
+      // let { user_id, password } = action.payload.data;
+      return { ...state, loading: false, user_id: action.payload.data.user_id };
+    case UPDATE_PASSWORD + "_REJECTED":
+      return {
+        ...state,
+        loading: false,
+        errorMessage: action.payload.data.message,
+      };
 
-    // case UPDATE_EMAIL + "_PENDING":
-    //   return { ...state, loading: true };
-    // case UPDATE_EMAIL + "_FULFILLED":
-    //   const { user_id, email } = action.payload.data;
-    //   return { ...state, loading: false, user_id: user_id, email };
-    // case UPDATE_EMAIL + "_REJECTED":
-    //   return {
-    //     ...state,
-    //     loading: false,
-    //     errorMessage: action.payload.data.message,
-    //   };
+    case UPDATE_EMAIL + "_PENDING":
+      return { ...state, loading: true };
+    case UPDATE_EMAIL + "_FULFILLED":
+      // const { user_id, email } = action.payload.data;
+      return { ...state, loading: false, user_id: action.payload.data.user_id, email:action.payload.data.email };
+    case UPDATE_EMAIL + "_REJECTED":
+      return {
+        ...state,
+        loading: false,
+        errorMessage: action.payload.data.message,
+      };
 
     default:
       return state;
@@ -132,16 +147,8 @@ export default function reducer(state = initialState, action) {
 
 // export default function reducer(state = initialState,action){
 //     switch(action.type) {
-//         case DELETE + "_PENDING":
-//             return {...state, loading:true}
-//         case DELETE + "_FULFILLED":
-//             const{user_id,email}= action.payload.data
-//             return {...state,loading:false,user_id:user_id,email}
-//         case DELETE + "_REJECTED":
-//             return {...state,loading:false,errorMessage:action.payload.data.message}
 
 //         default:
 //             return state;
 //     }
 // }
-

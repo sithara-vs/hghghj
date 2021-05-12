@@ -6,11 +6,32 @@ import "./Classes.css";
 import search from './search.png'
 
 export default class Clasees extends React.Component {
-  state = {
+  constructor(props){
+    super(props)
+  this.state = {
     classes: [],
+    search:''
+    
     
   };
   
+  this.handleSearch = this.handleSearch.bind(this);
+  this.day = this.day.bind(this)
+
+  }
+  handleSearch(e){
+    console.log(e.target)
+    this.setState({
+      [e.target.name]:e.target.value
+    })
+  }
+  day (){
+    console.log("clicked")
+  axios.get(`/api/classes/${this.state.search}`).then((res) => {
+    const classes = res.data;
+    this.setState({ classes });
+  });
+}
 
   componentDidMount() {
     axios.get("/api/classes").then((res) => {
@@ -18,6 +39,7 @@ export default class Clasees extends React.Component {
       this.setState({ classes });
     });
   }
+  
 
   render() {
     return (
@@ -25,8 +47,8 @@ export default class Clasees extends React.Component {
         <Header />
         <h1>Our Classes</h1>
         <span>
-        <input className="search" placeholder="search by day of the week" />
-        <button classname="searchbutton">
+        <input className="search" placeholder="search by day of the week" type="text" value={this.state.search} onChange={e =>this.setState({ search: e.target.value })}/>
+        <button classname="searchbutton" onClick={() => this.day()}>
         <img className="searchicon" src={search} alt="search"/>
         </button>
         </span>

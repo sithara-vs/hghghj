@@ -51,7 +51,7 @@ app.post('/api/delete', authCtrl.delete);
 
 // //Class Endpoints
 app.get('/api/classes',classesCtrl.getAllClasses);
-app.get('/api/search_day',classesCtrl.getSpecificClass) ;
+app.get('/api/classes/:day_of_the_week',classesCtrl.getSpecificClass) ;
 
 
 // //Instructors Endpoints
