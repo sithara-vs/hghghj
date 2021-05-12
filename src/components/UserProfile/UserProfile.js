@@ -1,17 +1,23 @@
-import React ,{useState}from "react";
+import React, { useState } from "react";
 
 import "./UserProfile.css";
 import Header from "../Header/Header";
-import { update_email } from "../../redux/userReducer";
+import { update_email , update_password} from "../../redux/userReducer";
 import { connect } from "react-redux";
 
 function UserProfile(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  function handleSubmit() {
+  function handleSubmitEmail() {
     if (props.user.email) {
       props.update_email(email);
+    }
+  }
+
+  function handleSubmitPassword() {
+    if (props.user.email) {
+      props.update_password(password);
     }
   }
 
@@ -31,16 +37,20 @@ function UserProfile(props) {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <button onClick={handleSubmit}>Submit</button>
-          
+          <button onClick={handleSubmitEmail}>Submit</button>
         </div>
         <h4>Change Password?</h4>
         <div>
           Please enter new password{" "}
-          <input placeholder="Enter Password" type="password" />
+          <input
+            placeholder="Enter Password"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
           Please enter new password one more time{" "}
           <input placeholder="Enter Password" type="password" />
-          <button>Submit</button>
+          <button onClick={handleSubmitPassword}>Submit</button>
           <div className="test">
             <div className="element"></div>
             <div className="element">A</div>
@@ -55,6 +65,7 @@ const mapStateToProps = (reduxState) => reduxState;
 
 const mapDispatchToProps = {
   update_email,
+  update_password
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserProfile);
