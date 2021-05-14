@@ -24,11 +24,11 @@ export default class PersonList extends React.Component {
           <div className="layout">
             {this.state.instructors.map((instructors) => {
               return (
-                <p classname="instructors">
+                <div classname="instructors">
                   <img className="layout1" src={instructors.image} />
 
                   <p className="about">{instructors.about}</p>
-                </p>
+                </div>
               );
             })}
           </div>

@@ -39,14 +39,14 @@ width:800px;
 }
 
 .select1{
-    background-color: red;
+    background-color: rgb(245, 99, 99);
 }
 .select2{
     background-color: greenyellow;
 }
 .book{
     height:20px;
-    background-color: greenyellow;
+    background-color: rgb(245, 99, 99);
 }
 .buttonbook{
     height:40px;
@@ -66,6 +66,51 @@ width:800px;
     width:20px;
 }
 
-.searchbutton{
-    
+.Class-titles{
+    display:flex;
+    flex-direction: row;
+    align-items: stretch;
+    background-color: #1E6FB8;
+    justify-content: space-evenly;
+}
+.class-details{
+    display:flex;
+    flex-direction: row;
+    align-items: stretch;
+     background-color:#B9D9ED; 
+    justify-content: space-evenly;
+    width:100vw
+}
+
+
+
+.pclass1{
+    color:white;
+    font-weight: bold;
+    position: relative;
+    left:170px;
+}
+.pclass2{
+    color:white;
+    font-weight: bold;
+    position: relative;
+    left:70px;
+}
+.pclass3{
+    color:white;
+    font-weight: bold;
+    position: relative;
+    left:10px;
+}
+.pclass4{
+    color:white;
+    font-weight: bold;
+    position: relative;
+    right:110px;
+}
+.pclass5{
+    color:white;
+    font-weight: bold;
+    position: relative;
+    right:280px;
 }

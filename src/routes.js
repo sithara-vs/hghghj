@@ -6,6 +6,7 @@ import Instructors from './components/Instructors/Instructors';
 import Classes from './components/Classes/Classes';
 import Contact from './components/Contact/Contact'
 import UserProfile from './components/UserProfile/UserProfile'
+import Bookings from './components/Bookings/Bookings';
 
 export default (
     <Switch>
@@ -16,6 +17,7 @@ export default (
         <Route exact path="/classes" component={Classes}/>
         <Route exact path="/contact" component={Contact}/>
         <Route exact path="/users" component={UserProfile}/>
+        <Route exact path="/bookings" component={Bookings}/>
 
        
     </Switch>

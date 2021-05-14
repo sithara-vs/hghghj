@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-
+import {toast,ToastContainer} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 import "./UserProfile.css";
 import Header from "../Header/Header";
 import { update_email , update_password} from "../../redux/userReducer";
@@ -10,15 +11,21 @@ function UserProfile(props) {
   const [password, setPassword] = useState("");
 
   function handleSubmitEmail() {
+    
     if (props.user.email) {
       props.update_email(email);
     }
+    const notify = () => toast("Email updated!");
+    notify()
   }
 
   function handleSubmitPassword() {
+
     if (props.user.email) {
       props.update_password(password);
     }
+    const notify = () => toast("Password updated!");
+    notify()
   }
 
   return (
@@ -28,6 +35,7 @@ function UserProfile(props) {
         <div className="user">
           <h4>Your Bookings</h4>
         </div>
+        <ToastContainer/>
         <h4>Change email?</h4>
         <div>
           Please enter new email{" "}

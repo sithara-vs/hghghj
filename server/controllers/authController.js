@@ -146,27 +146,46 @@ module.exports = {
 // };
 
 
+reset_email: async (req, res) => {
+  const { email } = req.body;
+  const db = req.app.get("db");
+  // let newUser = {}
+  if (req.session.user) {
+    const { user_id } = req.session.user;
 
+    await db.auth.reset_email({ user_id , email});
+   let [newUser] = await db.auth.check_for_user({ email })
+   req.session.user = newUser
+   console.log(req.session.user)
+    return res.status(200).send(req.session.user);
 
-
-
-
-
-
-  reset_email: async (req, res) => {
-    const { email } = req.body;
-    const db = req.app.get("db");
-    if (req.session.user) {
-      const { user_id } = req.session.user;
-
-      await db.auth.reset_email({ user_id , email});
-     
-      return res.sendStatus(200) .alert('email changed');
-
-      
-    }
-    return res.sendStatus(401);
-  },
+    
+  }
+  return res.sendStatus(401);
+},
 
 
 };
+
+
+
+
+
+
+//   reset_email: async (req, res) => {
+//     const { email } = req.body;
+//     const db = req.app.get("db");
+//     if (req.session.user) {
+//       const { user_id } = req.session.user;
+
+//       await db.auth.reset_email({ user_id , email});
+     
+//       return res.sendStatus(200) .alert('email changed');
+
+      
+//     }
+//     return res.sendStatus(401);
+//   },
+
+
+// };
