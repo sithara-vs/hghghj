@@ -92,10 +92,13 @@ export default function reducer(state = initialState, action) {
         email: action.payload.data.email,
       };
     case LOGIN + "_REJECTED":
-      return {
+      
+      return console.log(action.payload.response.data)||{
+        
         ...state,
         loading: false,
-        errorMessage: action.payload.data.message,
+        errorMessage: action.payload.response.data,
+        
       };
 
     case LOGOUT + "_PENDING":

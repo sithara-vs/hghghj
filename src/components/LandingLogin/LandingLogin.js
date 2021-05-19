@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link, withRouter ,Redirect} from "react-router-dom";
+import { Link, withRouter, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { register, login } from "../../redux/userReducer";
 import Header from "../Header/Header";
 import HeaderLogin from "../Header/HeaderLogin";
 import "./LandingLogin.css";
 import member from "./assets/member.png";
-
 
 function LandingLogin(props) {
   const [email, setEmail] = useState("");
@@ -31,18 +30,12 @@ function LandingLogin(props) {
     }
   }
 
+  if (props.user.email) return <Redirect to="/" />;
 
-
-
-
-  if(props.user.email) return <Redirect to="/"/>
-  
-  
   return (
     <div>
-      <Header />
-      <div className="body">
-        <form
+      <div >
+        <form className="loginBody"
           onSubmit={(e) => {
             e.preventDefault();
             handleSubmit();
@@ -71,6 +64,7 @@ function LandingLogin(props) {
                 onChange={(e) => setPassword(e.target.value)}
               />
               <button className="button">{buttonContent}</button>
+              <h3>{props.user.errorMessage}</h3>
             </div>
             <div className="account">
               <p>{pContent}</p>
@@ -91,8 +85,7 @@ function LandingLogin(props) {
   );
 }
 
-const mapStateToProps = reduxState => reduxState
-    
+const mapStateToProps = (reduxState) => reduxState;
 
 const mapDispatchToProps = {
   register,

@@ -8,6 +8,7 @@ export default class PersonList extends React.Component {
     instructors: [],
   };
 
+
   componentDidMount() {
     axios.get("/api/instructors").then((res) => {
       const instructors = res.data;
@@ -18,8 +19,8 @@ export default class PersonList extends React.Component {
   render() {
     return (
       <div className="bod">
-        <Header />
-        <div>
+        {/* <Header /> */}
+       
           <h1 className="meet"> Meet our Instructors!</h1>
           <div className="layout">
             {this.state.instructors.map((instructors) => {
@@ -32,7 +33,7 @@ export default class PersonList extends React.Component {
               );
             })}
           </div>
-        </div>
+        
       </div>
     );
   }

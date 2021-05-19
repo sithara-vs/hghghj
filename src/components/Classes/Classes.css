@@ -1,3 +1,8 @@
+.wholeClass{
+    position:relative;
+    top:160px;
+}
+
 .class{
 border-bottom:20px solid transparent ;
 
@@ -113,4 +118,18 @@ width:800px;
     font-weight: bold;
     position: relative;
     right:280px;
+}
+.classHeading{
+    background-color: black;
+    height:100px;
+    color:#CFB165;
+    font-size: xx-large;
+    font-style: italic;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:70vw;
+    border-radius: 25px;
+    position:relative;
+    left :-20px;
 }

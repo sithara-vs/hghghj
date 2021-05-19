@@ -1,8 +1,11 @@
-body{
+/* body{
 
     background-image: linear-gradient(#50A1D3, white);
+} */
+.userBod{
+  /* position:relative;
+  top:120px; */
 }
-
 .user{
     position: relative;
    
@@ -10,6 +13,7 @@ body{
 
 .element {
     display: inline-block;
+
     /* background: linear-gradient(180deg,#ff8a00,#e52e71); */
     background: linear-gradient(180deg,#024D91,#E9CA8C);
     height: 100px;
@@ -33,7 +37,20 @@ body{
       transform: skew(-20deg, -20deg);
     }
   }
-  
+  .wordcolor{
+    color:#CFB165;
+    font-weight: bolder;
+    font-style: italic;
+    position:relative;
+    top:10px;
+  }
+  .wordcolor1{
+    color:#CFB165;
+    font-weight: bolder;
+    font-style: italic;
+    position:relative;
+    top:10px;
+  }
   
   /* body, html {
     height: 100%;
@@ -45,9 +62,111 @@ body{
     align-items: center;
     justify-content: center;
     position: relative;
-    top:150px;
+    top:100px;
   }
   
   
+  .profile{
+    background-color: rgb(7, 6, 7);
+    height:550px;
+    width:600px;
+    position:relative;
+    left:420px;
+    top:30px;
+    border-radius: 80%;
+  }
   
+  .yogaImage{
+    height:200px;
+    width:300px;
+    position:relative;
+    top:350px;
+    left:30px;
+    border:5px solid black;
+    /* transform: skew(5deg); */
+    border-radius: 50%;
+  }
   
+  .userBody{
+    display: flex;
+    flex-direction: row;
+    top: 300px;
+
+  }
+
+  .yogaImage2{
+    height:200px;
+    width:300px;
+    position:relative;
+    top:-400px;
+    left:1100px;
+    border:5px solid black;
+    /* transform: skew(-5deg); */
+    border-radius: 50%;
+  }
+  
+
+
+  @media only screen and (max-width: 600px) {
+
+
+    .userBody{
+      display: flex;
+      flex-direction: column;
+      height:40px;
+      
+  
+    }
+    .yogaImage{
+      display:none;
+      height:400px;
+      width:300px;
+      position:relative;
+      top:60px;
+      left:30px;
+      border:5px solid black;
+      /* transform: skew(5deg); */
+      border-radius: 50%;
+    }
+
+    .profile{
+      background-color: rgb(7, 6, 7);
+      height:700px;
+      width:400px;
+      position:relative;
+      left:0px;
+      top:240px;
+      border-radius: 0%;
+      
+    }
+
+
+    .yogaImage2{
+      display:none;
+      height:350px;
+      width:300px;
+      position:relative;
+      top:40px;
+      left:800px;
+      border:5px solid black;
+      /* transform: skew(-5deg); */
+      border-radius: 50%;
+    }
+
+    .wordcolor1{
+      color:#CFB165;
+      font-weight: bolder;
+      font-style: italic;
+      position:relative;
+      top:10px;
+    }
+
+    .wordcolor{
+    color:#CFB165;
+    font-weight: bolder;
+    font-style: italic;
+    position:relative;
+    top:10px;
+    font-size: small;
+  }
+  }

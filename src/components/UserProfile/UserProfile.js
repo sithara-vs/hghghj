@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import {toast,ToastContainer} from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css';
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./UserProfile.css";
 import Header from "../Header/Header";
-import { update_email , update_password} from "../../redux/userReducer";
+import { update_email, update_password } from "../../redux/userReducer";
 import { connect } from "react-redux";
 
 function UserProfile(props) {
@@ -11,34 +11,42 @@ function UserProfile(props) {
   const [password, setPassword] = useState("");
 
   function handleSubmitEmail() {
-    
     if (props.user.email) {
       props.update_email(email);
     }
     const notify = () => toast("Email updated!");
-    notify()
+    notify();
   }
 
   function handleSubmitPassword() {
-
     if (props.user.email) {
       props.update_password(password);
     }
     const notify = () => toast("Password updated!");
-    notify()
+    notify();
   }
 
   return (
-    <div>
-      <Header />
-      <div>
+    <div className="userBod">
+      <background-image
+        className="yogaCover"
+        src="https://images.pexels.com/photos/268134/pexels-photo-268134.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+      />
+
+      <div className="userBody">
+        <img
+          className="yogaImage"
+          src="https://images.pexels.com/photos/268134/pexels-photo-268134.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+        />
+      </div>
+      <div className="profile">
         <div className="user">
-          <h4>Your Bookings</h4>
+          <h1 className="wordcolor1"> Welcome </h1>
         </div>
-        <ToastContainer/>
-        <h4>Change email?</h4>
+        <ToastContainer />
+        <h4 className="wordcolor">Change email?</h4>
         <div>
-          Please enter new email{" "}
+          <p className="wordcolor">Please enter new email </p>
           <input
             placeholder="Enter Email"
             type="email"
@@ -47,17 +55,17 @@ function UserProfile(props) {
           />
           <button onClick={handleSubmitEmail}>Submit</button>
         </div>
-        <h4>Change Password?</h4>
+        <h4 className="wordcolor">Change Password?</h4>
         <div>
-          Please enter new password{" "}
+          <p className="wordcolor">Please enter new password </p>
           <input
             placeholder="Enter Password"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          Please enter new password one more time{" "}
-          <input placeholder="Enter Password" type="password" />
+          {/* Please enter new password one more time{" "}
+          <input placeholder="Enter Password" type="password" /> */}
           <button onClick={handleSubmitPassword}>Submit</button>
           <div className="test">
             <div className="element"></div>
@@ -66,6 +74,12 @@ function UserProfile(props) {
           </div>
         </div>
       </div>
+      <div className="userBody">
+        <img
+          className="yogaImage2"
+          src="https://images.pexels.com/photos/268134/pexels-photo-268134.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+        />
+      </div>
     </div>
   );
 }
@@ -73,7 +87,7 @@ const mapStateToProps = (reduxState) => reduxState;
 
 const mapDispatchToProps = {
   update_email,
-  update_password
+  update_password,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserProfile);

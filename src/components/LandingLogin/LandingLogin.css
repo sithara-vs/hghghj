@@ -1,8 +1,14 @@
-.body{
+/* .body{
     background-image: linear-gradient(#50A1D3, white);
     width:100vw;
     height:100vh;
     
+} */
+.loginBody{
+    position: relative;
+    top:150px;
+    
+    /* background-color: brown; */
 }
 
 .account{
@@ -24,7 +30,7 @@
     position: relative;
     /* bottom:200px; */
     top:50px;
-    z-index: 1;
+    /* z-index: 1; */
 
 }
 .welcome{

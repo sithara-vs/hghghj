@@ -120,30 +120,8 @@ module.exports = {
   },
 
 
-//   reset_email: async (req, res) => {
-//     const { email } = req.body;
-//     const db = req.app.get("db");
-
-//     try {
-//       let [existingUser] = await db.auth.check_for_user({ email });
-//     if (existingUser) {
-//       const { user_id } = req.session.user;
-
-//       await db.auth.reset_email({ user_id , email});
-     
-//       return res.sendStatus(200);
-
-      
-//     }
-//   }catch (err) {
-//     console.log(err);
-//     res.sendStatus(500);
-//     return;
-//   }
-//   },
 
 
-// };
 
 
 reset_email: async (req, res) => {
@@ -172,20 +150,3 @@ reset_email: async (req, res) => {
 
 
 
-//   reset_email: async (req, res) => {
-//     const { email } = req.body;
-//     const db = req.app.get("db");
-//     if (req.session.user) {
-//       const { user_id } = req.session.user;
-
-//       await db.auth.reset_email({ user_id , email});
-     
-//       return res.sendStatus(200) .alert('email changed');
-
-      
-//     }
-//     return res.sendStatus(401);
-//   },
-
-
-// };
