@@ -58,3 +58,43 @@
 //     );
 //   }
 // }
+
+import React, { useState,useEffect } from "react";
+
+import axios from "axios";
+
+
+
+export default function Bookings(props){
+  const [bookings,setBookings] = useState([]);
+
+
+
+  axios.get("/api/instructors").then((res) => {
+    const bookings = res.data;
+    setBookings(bookings );
+  }); 
+
+  
+ 
+  
+    return (
+      <div className="bod">
+       
+       
+          <h1 > Bookings!</h1>
+          <div >
+            {bookings.map((bookings) => {
+              return (
+                <div>
+                  
+
+                  <p >{bookings.id}</p>
+                </div>
+              );
+            })}
+          </div>
+        
+      </div>
+    );
+  }

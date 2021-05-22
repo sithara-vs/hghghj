@@ -5,6 +5,7 @@ import "./UserProfile.css";
 import Header from "../Header/Header";
 import { update_email, update_password } from "../../redux/userReducer";
 import { connect } from "react-redux";
+import Bookings from "../Bookings/Bookings"
 
 function UserProfile(props) {
   const [email, setEmail] = useState("");
@@ -80,6 +81,7 @@ function UserProfile(props) {
           src="https://images.pexels.com/photos/268134/pexels-photo-268134.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
         />
       </div>
+      <Bookings/>
     </div>
   );
 }

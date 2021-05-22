@@ -7,15 +7,13 @@ const authCtrl = require('./controllers/authController');
 const classesCtrl = require('./controllers/classesController');
 const bookingsCtrl = require('./controllers/bookingsController');
 const instructorsCtrl = require('./controllers/instructorsController');
-const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
 
+const {v4:uuidv4} = require("uuid");
+const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET,STRIPE_KEY } = process.env;
+const stripe = require("stripe")(STRIPE_KEY);
 const app = express();
 
-/* CORS stands for Cross Origin Resource Sharing. 
-*  Basically one domain like "facebook" vs 
-*  another origin like "google" talking to each other.
-*  Don't use '*' on a production environment
-*/
+
 app.use(cors('*'));
 app.use(express.json());
 
@@ -66,3 +64,74 @@ app.delete('/api/bookings/:booking_id',bookingsCtrl.cancel);
 app.put('/api/reset_password',authCtrl.reset_password)
 app.put('/api/reset_email',authCtrl.reset_email)
   
+
+
+
+
+
+
+
+
+// app.get("/", (req, res) => {
+//   res.send("Add your Stripe Secret Key to the .require('stripe') statement!");
+// });
+
+app.post("/api/checkout", async (req, res) => {
+  console.log("Request:", req.body);
+
+  let error;
+  let status;
+  try {
+    const { classData, token } = req.body;
+    console.log(classData)
+
+    const customer = await stripe.customers.create({
+      email: token.email,
+      source: token.id
+    });
+console.log(customer)
+    const idempotency_key = uuidv4();
+    const cards = await stripe.customers.listSources(
+      customer.id,
+      {object: 'card', limit: 3}
+    );
+    console.log(cards)
+    console.log("CLASSDATA",classData)
+    console.log("TOKEN:",token)  
+    const charge = await stripe.charges.create(
+      {
+        amount: classData.price * 100,
+
+        currency: "usd",
+        customer: customer.id,//classData.class_id,
+        // source:"tok_visa",
+        receipt_email: token.email,
+        description: `Purchased the ${classData.description}`,
+        shipping: {
+          name: "saji",//token.card.name,
+          address: {
+            line1: "south",//token.card.address_line1,
+            line2: "north",//token.card.address_line2,
+            city: "east",//token.card.address_city,
+            country: "west",//token.card.address_country,
+            postal_code: "24333",//token.card.address_zip
+            
+          }
+        }
+      },
+      {
+        idempotency_key
+      }
+    );
+    console.log("Charge:", { charge });
+    status = "success";
+  } catch (error) {
+    console.error("Error:", error);
+    status = "failure";
+  }
+
+  res.json({ error, status });
+});
+// console.log(
+//     "nodejs running url"+ window.location.href)
+

@@ -1,11 +1,18 @@
 import React from "react";
-import Header from "../Header/Header";
+
 import axios from "axios";
 import "./Classes.css";
 import search from "./search.png";
 import { Link } from "react-router-dom";
+import StripeCheckout from "react-stripe-checkout";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { connect } from "react-redux";
+import "react-toastify/dist/ReactToastify.css";
 
-export default class Classes extends React.Component {
+toast.configure();
+
+class Classes extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -58,20 +65,42 @@ export default class Classes extends React.Component {
     });
   }
 
-  handleBooking = (classId) => {
-    const classData = this.state.classes.filter((c) => c.id == classId);
+  // handleBooking = (classId) => {
+  //   const classData = this.state.classes.filter((c) => c.id == classId);
 
-    if (window.confirm("Are you sure you want to book?")) {
-      //use class data to post bookings.Use class data to make axios post to bookings table.
-      //Get user_id off of redux
-      //This is where stripe interaction will happen.
-      //After everything is finished reset state for this class.
-      // React Toastify pops up to show Success or Failure
-      console.log("Successfully booked!");
+  //   if (window.confirm("Are you sure you want to book?")) {
+  //     use class data to post bookings.Use class data to make axios post to bookings table.
+  //     Get user_id off of redux
+  //     This is where stripe interaction will happen.
+  //     After everything is finished reset state for this class.
+  //     React Toastify pops up to show Success or Failure
+  //     console.log("Successfully booked!");
+  //   } else {
+  //     console.log("Booking refused!");
+  //   }
+  // };
+
+  async handleToken(token, classId) {
+    const classData = this.state.classes.filter((c) => c.class_id === classId)[0];
+
+    if (this.props.user.email) {
+      console.log({ token });
+      const response = await axios.post("/api/checkout", { token, classData });
+      // console.log("Successfully booked!");
+      const { status } = response.data;
+      console.log(response)
+      if (status === "success") {
+        toast("Success!Check email for details", { type: "success" });
+      } else {
+        toast("Something went wrong", { type: "Error" });
+      }
     } else {
+      // toast("Please Log in to Make Booking", { type: "Error" });
+      const notify = () => toast("Please Log in to Make Booking");
+    notify();
       console.log("Booking refused!");
     }
-  };
+  }
 
   componentDidMount() {
     axios.get("/api/classes").then((res) => {
@@ -85,6 +114,7 @@ export default class Classes extends React.Component {
   }
 
   render() {
+    console.log(this.props);
     return (
       <div className="wholeClass">
         <h1 className="classHeading">Our Classes</h1>
@@ -143,13 +173,21 @@ export default class Classes extends React.Component {
                   <p>{c.price}</p>
                   <p>{c.total}</p>
                   <div className="buttonbook">
-                    <button
+                    {/* <button
                       className="book"
                       type="button"
                       onClick={() => this.handleBooking(c.class_id)}
                     >
                       BOOK
-                    </button>
+                    </button> */}
+
+                    <StripeCheckout
+                      stripeKey="pk_test_51IsCsUFUrK1R6cX12KNNhiWDeTiPmy6EBbwEHkBREJ4cpVOO28RbKHSdCP4JlwwOwByAUGrgm5qODPyGFjXtAykN00meTPV7tm"
+                      token={(token)=>this.handleToken(token,c.class_id)}
+                      billingAddress
+                      amount={c.total * 100}
+                      name={c.class_id}
+                    />
                   </div>
                 </li>
               </div>
@@ -160,3 +198,6 @@ export default class Classes extends React.Component {
     );
   }
 }
+const mapStateToProps = (reduxState) => reduxState;
+
+export default connect(mapStateToProps)(Classes);
