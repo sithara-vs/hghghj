@@ -32,7 +32,7 @@ function Header(props) {
         </div>
 
         <p className={`mobile-nav-bar ${shouldShow}`}>
-          <button onClick={isMenuOpen}> X </button>
+          {/* <button onClick={isMenuOpen}> X </button> */}
 
           <li className="mobile-ulclass">
             <Link to="/">Home</Link>
@@ -60,7 +60,9 @@ function Header(props) {
 
           {props.user.email ? (
             <Link to="/users">
-              <p className="star">.</p>{" "}
+              {/* <p className="star">.</p>{" "} */}
+              <img className="gear" src="http://simpleicon.com/wp-content/uploads/setting2.svg"/>
+             
             </Link>
           ) : (
             <Link to="/login">
@@ -100,7 +102,8 @@ function Header(props) {
 
               {props.user.email ? (
                 <Link to="/users">
-                  <p className="star">.</p>{" "}
+                  {/* <p className="star">.</p>{" "} */}
+                  <img className="gear" src="http://simpleicon.com/wp-content/uploads/setting2.svg"/>
                 </Link>
               ) : null}
             </div>

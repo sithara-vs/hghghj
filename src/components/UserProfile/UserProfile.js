@@ -14,6 +14,8 @@ function UserProfile(props) {
   function handleSubmitEmail() {
     if (props.user.email) {
       props.update_email(email);
+      setEmail("");
+    
     }
     const notify = () => toast("Email updated!");
     notify();
@@ -22,6 +24,7 @@ function UserProfile(props) {
   function handleSubmitPassword() {
     if (props.user.email) {
       props.update_password(password);
+      setPassword("");
     }
     const notify = () => toast("Password updated!");
     notify();
@@ -81,7 +84,7 @@ function UserProfile(props) {
           src="https://images.pexels.com/photos/268134/pexels-photo-268134.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
         />
       </div>
-      <Bookings/>
+     
     </div>
   );
 }
