@@ -114,20 +114,20 @@ font-weight: bolder;
         position: relative;
         left : 15px;
         top:-60px;
-            height:470px;
-            width:330px;
+            height:490px;
+            width:590px;
            
             /* align-items: stretch; */
             background-color: #010102;
-            box-shadow: 5px 5px 4px 5px #a3a1a1;
+            box-shadow: 8px 8px 8px -4px #040a0098;
            
         }
 
         .contact{
             position:relative;
-            left:80px;
-            top:40px;
-            font-size:large;
+            left:70px;
+            top:50px;
+            font-size:xx-large;
             color: #CFB165;
         }
 
@@ -138,7 +138,7 @@ font-weight: bolder;
             top:70px;
             left:10px;
             color:#CFB165;
-            font-size:small;
+            font-size:medium;
         }
 
 
@@ -167,7 +167,7 @@ font-weight: bolder;
         }
 
         .add{
-            font-size:small;
+            font-size:medium;
             position:relative;
             top: 140px;
             left:20px;

@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../Header/Header";
 import "./Contact.css";
 import yogaicon from "./assets/yoga.png";
+import Nodemailer from "../Nodemailer/Nodemailer";
 
 export default function Contact() {
   return (
@@ -26,7 +27,7 @@ export default function Contact() {
         </div>
       </div>
 
-      
+      <Nodemailer/>
     </div>
   );
 }
