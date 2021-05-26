@@ -6,6 +6,7 @@
     position:relative;
     top:200px;
     padding-bottom: 50px;
+   
     
   }
   
@@ -118,7 +119,7 @@
         justify-content: center;
         position:relative;
         top:0px;
-        padding-bottom: 250px;
+        padding-bottom: 350px;
         padding-left: 20px;
         padding-top: 5px;;
         
@@ -136,4 +137,14 @@
         box-shadow: 8px 8px 8px -4px #daf1ca98;
       }
 
+
+      .form__wrapper{
+        display: flex;
+        align-items: center;
+        padding: 50px;
+        background-color: rgb(47, 47, 51);
+        flex-direction: column;
+        border-radius: 5px;
+        width: 700px;
+      }
   }

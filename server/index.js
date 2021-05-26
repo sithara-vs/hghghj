@@ -171,7 +171,7 @@ app.post('/mail',(req,res,next) =>{
 
 
   const mailOptions = {
-    from: 'devmountain999@gmail.com',
+    from: name,
     to:'devmountain999@gmail.com',
     // from: name,
     // to:email,
