@@ -8,7 +8,7 @@ import HeaderLogin from "../Header/HeaderLogin";
 export default function Home() {
   return (
     <div className="home">
-      <div className="trial">
+      {/* <div className="trial"> */}
         <div className="homeHeader">
           <h2 className="frontpage">
             Yoga is critical in each individual’s life, since it keeps up
@@ -19,7 +19,7 @@ export default function Home() {
           </h2>
         </div>
 
-        <div className="vid">
+        {/* <div className="vid"> */}
           <video
             autoplay
             loop
@@ -31,8 +31,8 @@ export default function Home() {
             ControlBar
             autoHide={true}
           />
-        </div>
-      </div>
+        {/* </div> */}
+      {/* </div> */}
     </div>
   );
 }

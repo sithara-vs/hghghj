@@ -112,10 +112,10 @@ font-weight: bolder;
         justify-content: center;
         align-items: center;
         position: relative;
-        left : 35px;
+        left : 10px;
         top:-60px;
             height:490px;
-            width:590px;
+            width:350px;
            
             /* align-items: stretch; */
             background-color: #010102;
@@ -223,7 +223,114 @@ font-weight: bolder;
 
   
   
-  @media (min-width: 600px) {
-    
-  }
+  
 
+  @media only screen and (max-width: 900px) and (min-width: 600px) {
+    .envelope{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        left : 11px;
+        top:-155px;
+            height:490px;
+            width:760px;
+           
+            /* align-items: stretch; */
+            background-color: #010102;
+            box-shadow: 8px 8px 8px -4px #040a0098;
+           
+        }
+
+        .contact{
+            position:relative;
+            left:70px;
+            top:50px;
+            font-size:xx-large;
+            color: #CFB165;
+        }
+
+
+
+        .h3class{
+            position:relative;
+            top:70px;
+            left:10px;
+            color:#CFB165;
+            font-size:medium;
+        }
+
+
+        .left{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            position: relative;
+            top:40px;
+            left:0px;
+            height:200px;
+            width:300px;
+            /* background-color: saddlebrown; */
+        }
+
+
+
+        .right{
+            position : relative;
+            height:490px;
+            width:400px;
+            top:20px;
+            right:0px;
+            left:-20px;
+            /* border: 1px solid greenyellow; */
+        }
+
+        .add{
+            font-size:medium;
+            position:relative;
+            top: 140px;
+            left:20px;
+            color:#CFB165;
+            }
+
+
+            .yogaicon{
+                position:relative;
+                top:147px;
+                /* right:0px; */
+                left:170px;
+               
+                height:40px;
+                width:40px;
+                display: flex;
+                align-content: center;
+                position:relative;
+                /* left:150px; */
+            
+            }
+            address{
+    
+                position: relative;
+                top:0px;
+                left:30px;
+                display:flex;
+                align-items: center;
+                height:500px;
+                color:#CFB165;
+                font-size: medium;
+                
+                
+            }
+
+            .body{
+                width:40px;
+                height:600px;
+            }
+
+            .outerContact{
+                position:relative;
+                top:360px;
+            }
+
+  }

@@ -64,11 +64,23 @@ width:800px;
     width:190px;
     height:25px;
     position:relative;
+    left:500px;
     bottom:6px;
 }
 .searchicon{
-    height:22px;
-    width:20px;
+    height:27px;
+    width:27px;
+    position:relative;
+    left: -4px;
+    top: -2px;
+    background-color: white;
+}
+.searchbutton{
+    position:relative;
+    left: 697px;
+    top: -37px;
+    height: 31px;
+    width: 32px;
 }
 
 .Class-titles{
@@ -93,31 +105,31 @@ width:800px;
     color:white;
     font-weight: bold;
     position: relative;
-    left:200px;
+    left:520px;
 }
 .pclass2{
     color:white;
     font-weight: bold;
     position: relative;
-    left:120px;
+    left:620px;
 }
 .pclass3{
     color:white;
     font-weight: bold;
     position: relative;
-    left:90px;
+    left:750px;
 }
 .pclass4{
     color:white;
     font-weight: bold;
     position: relative;
-    left:28px;
+    left:800px;
 }
 .pclass5{
     color:white;
     font-weight: bold;
     position: relative;
-    right:115px;
+    left: 830px;
 }
 
 
@@ -125,7 +137,7 @@ width:800px;
     color:white;
     font-weight: bold;
     position: relative;
-    right:230px;
+    left:870px;
 }
 .classHeading{
     background-color: black;
@@ -140,4 +152,61 @@ width:800px;
     border-radius: 25px;
     position:relative;
     left :-20px;
+}
+
+@media only screen and (max-width: 900px) and (min-width: 600px) {
+
+    .pclass1{
+        color:white;
+        font-weight: bold;
+        position: relative;
+        left:-25px;
+    }
+    .pclass2{
+        color:white;
+        font-weight: bold;
+        position: relative;
+        left:5px;
+    }
+    .pclass3{
+        color:white;
+        font-weight: bold;
+        position: relative;
+        left:40px;
+    }
+    .pclass4{
+        color:white;
+        font-weight: bold;
+        position: relative;
+        left:58px;
+    }
+    .pclass5{
+        color:white;
+        font-weight: bold;
+        position: relative;
+        right:-10px;
+    }
+    
+    
+    .pclass6{
+        color:white;
+        font-weight: bold;
+        position: relative;
+        right:10px;
+    }
+    .classHeading{
+        background-color: black;
+        height:100px;
+        color:#CFB165;
+        font-size: xx-large;
+        font-style: italic;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width:70vw;
+        border-radius: 25px;
+        position:relative;
+        left :-20px;
+    }
+
 }

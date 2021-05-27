@@ -27,7 +27,9 @@
     background-color: rgb(11, 11, 12);
     flex-direction: column;
     border-radius: 5px;
-    width: 700px;
+    width: 600px;
+    position:relative;
+    left:700px;
   }
   
   .form__title{
@@ -112,6 +114,10 @@
     opacity: 1; /* Firefox */
   }
 
+  .backQuill{
+    background-color: antiquewhite;
+  }
+
   @media only screen and (max-width: 600px) {
     .App1{
         display: flex;
@@ -121,7 +127,8 @@
         top:0px;
         padding-bottom: 350px;
         padding-left: 20px;
-        padding-top: 5px;;
+        padding-top: 5px;
+        
         
       }
 
@@ -145,6 +152,55 @@
         background-color: rgb(47, 47, 51);
         flex-direction: column;
         border-radius: 5px;
-        width: 700px;
+        
+        width: 261px;
+        position: relative;
+        left: 76px;
+        height: 600px;
       }
+  }
+  @media only screen and (max-width: 900px) and (min-width: 600px) {
+
+
+    .App1{
+      /* display: flex;
+      align-items: center; */
+      justify-content: center;
+      position:relative;
+      top:0px;
+      padding-bottom: 350px;
+      padding-left: 0px;
+      padding-top: 5px;
+      position:relative;
+      
+      width:600px;
+      
+    }
+
+    .form{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 1px;
+      position:relative;
+      left:90px;
+      /* border: 2px solid #f74b42; */
+      box-shadow: 8px 8px 8px -4px #daf1ca98;
+    }
+
+
+    .form__wrapper{
+      display: flex;
+      align-items: center;
+      padding: 50px;
+      background-color: rgb(47, 47, 51);
+      flex-direction: column;
+      border-radius: 5px;
+      width: 597px;
+      position:relative;
+      top:-63px;
+      left:11px;
+    }
+
   }

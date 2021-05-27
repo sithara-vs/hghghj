@@ -93,3 +93,193 @@
     display:flex;
     flex-direction: row;
 }
+
+@media only screen and (max-width: 600px) {
+
+
+/* .body{
+    background-image: linear-gradient(#50A1D3, white);
+    width:100vw;
+    height:100vh;
+    
+} */
+.loginBody{
+    position: relative;
+    top:150px;
+    
+    /* background-color: brown; */
+}
+
+.account{
+    color: rgb(64, 64, 202);
+    position: relative;
+    display:flex;
+    flex-direction: row;
+    top:140px;
+}
+.register{
+    color:red;
+    position: relative;
+    top:0px;
+    
+    
+}
+.h2landingclass{
+    font-family: cursive;
+    position: relative;
+    /* bottom:200px; */
+    top:50px;
+    /* z-index: 1; */
+
+}
+.welcome{
+    position: relative;
+    left:3px;
+    top:50px;
+    width: 329px;
+    height: 370px; 
+    border-radius: 25px; 
+    padding: 50px;
+    border: 1px solid rgb(46, 45, 45);
+    /* display: flex;
+    justify-content: center; */
+    background-color:white;
+    border: 1px solid;
+  padding: 10px;
+  /* box-shadow: 3px 7px 5px 5px #4a4e4e ; */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+    
+}
+
+.welcome:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+
+.input{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    top:70px;
+    flex-direction: column;
+    align-items:center;
+    /* background-color: rgb(180, 180, 231); */
+    height:130px
+
+    
+}
+.member-icon{
+    height:60px;
+    width:60px;
+}
+
+.input-box{
+    /* height:100px;
+    width:200px;
+    border-radius: 25%; */
+    
+}
+
+.button{
+    background-color: greenyellow;
+}
+.login-icon{
+    height:30px;
+    width:30px;
+
+}
+.icons1{
+    display:flex;
+    flex-direction: row;
+}
+
+
+
+}
+@media only screen and (max-width: 900px) and (min-width: 600px) {
+
+    .loginBody{
+        position: relative;
+        top:150px;
+        
+        /* background-color: brown; */
+    }
+    
+    .account{
+        color: rgb(64, 64, 202);
+        position: relative;
+        display:flex;
+        flex-direction: row;
+        top:140px;
+    }
+    .register{
+        color:red;
+        position: relative;
+        top:0px;
+        
+        
+    }
+    .h2landingclass{
+        font-family: cursive;
+        position: relative;
+        /* bottom:200px; */
+        top:50px;
+        /* z-index: 1; */
+    
+    }
+    .welcome{
+        position: relative;
+        left:250px;
+        top:50px;
+        width: 350px;
+        height: 370px; 
+        border-radius: 25px; 
+        padding: 50px;
+        border: 1px solid rgb(46, 45, 45);
+        /* display: flex;
+        justify-content: center; */
+        background-color:white;
+        border: 1px solid;
+      padding: 10px;
+      /* box-shadow: 3px 7px 5px 5px #4a4e4e ; */
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      transition: 0.3s;
+        
+    }
+    
+    .welcome:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+      }
+    
+    .input{
+        display: flex;
+        justify-content: space-around;
+        position: relative;
+        top:70px;
+        flex-direction: column;
+        align-items:center;
+        /* background-color: rgb(180, 180, 231); */
+        height:130px
+    
+        
+    }
+    .member-icon{
+        height:60px;
+        width:60px;
+    }
+    
+   
+    
+    .button{
+        background-color: greenyellow;
+    }
+    .login-icon{
+        height:30px;
+        width:30px;
+    
+    }
+    .icons1{
+        display:flex;
+        flex-direction: row;
+    }
+}

@@ -201,8 +201,150 @@ li {
 
 }
 
-@media (min-width: 600px) {
-  .mobile-nav-bar {
+@media only screen and (max-width: 900px) and (min-width: 600px) {
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 150px;
+    width: 100%;
+    /* background-color: white; */
+    position: fixed;
+    z-index: 1;
+    padding-top: 0px;
+    margin: 0px;
+    /* background-color: #D2E6EA; */
+    background-image: linear-gradient(#caf1f8, white);
+  }
+
+
+  .mobile-nav-bar-show {
+    display:none;
+    width: 110%;
+    height: 120%;
+  
+    padding-left: 10px;
+    padding-top: 0px;
+    background-color: rgb(88, 143, 189);
+    color: white;
+  }
+  .reg {
+    position: relative;
+    top: -10px;
+    right: 50px;
+  }
+  
+  .title {
+    display: flex;
+    flex-direction: column;
+    /* background-color: tomato; */
+  }
+  
+  .h1class {
+    position: relative;
+    left: 180px;
+    height: 50px;
+    letter-spacing: 12px;
+    text-shadow: 2px 2px 8px grey;
+  }
+  .login {
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    
+
+   
+    /* background-color: teal; */
+  }
+  .nav {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    align-items: flex-start;
+    position: relative;
+    left: 30px;
+    width: 1650px;
+    height: 110px;
+    top: -100px;
+    /* background-color: springgreen; */
+  }
+  li {
+    list-style-type: none;
+  }
+  .ulclass {
+    letter-spacing: 2px;
+    height: 20px;
+    list-style-type: none;
+  }
+  .imgclass {
+    height: 100px;
+    width: 100px;
+  }
+  .logo {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    left: 120px;
+    top: 30px;
+    width: 1500px;
+    /* background-color: rgb(156, 21, 51); */
+  }
+  
+  .hamburger {
+    display: flex;
+    align-items: row;
+    /* justify-content: center; */
+    border: 1px solid rgb(7, 7, 7);
+    width: 65px;
+    height: 45px;
+    background-color: #CFB165;
     display: none;
+    position: relative;
+    top: -71px;
+    left: 300px;
+  }
+  
+  .mobile-nav-bar {
+    display:none;
+   
+  }
+  
+ 
+  
+  .logout {
+    display: flex;
+    position: relative;
+    align-items: flex-end;
+    
+  }
+  
+  /* .star {
+    position: relative;
+    top: -320px;
+    left: 1000px;
+  } */
+  
+  .logs {
+    position: relative;
+    top: -80px;
+    right: 70px;
+    height: 140px;
+    width: 140px;
+    /* background-color: brown; */
+  }
+  
+  .gear{
+    position: absolute;
+   height:30px;
+   width:30px;
+    top: 45px;
+    right: 55px;
+  }
+
+
+}
+@media (min-width: 900px){
+  .mobile-nav-bar {
+    display:none;
   }
 }

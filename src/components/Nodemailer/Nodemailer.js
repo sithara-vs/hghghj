@@ -166,7 +166,7 @@ export default function Nodemailer() {
               onClick = {handleRequest}  type = "submit" className = "btn btn-success">Send</button>
             </div></div>
             <div className = "container__composeMail">
-            <ReactQuill
+            <ReactQuill 
               id = "message"
               value = {message}
               onChange = {handleQuillChange}
