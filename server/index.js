@@ -177,7 +177,7 @@ app.post('/mail',(req,res,next) =>{
     // to:email,
     subject:subject,
     html:`${name} <noreply@$
-    {name}.com <br/> ${message}`
+    {name}.com ${email} <br/> ${message}`
   }
   
   transporter.sendMail(mailOptions,(err,data)=>{

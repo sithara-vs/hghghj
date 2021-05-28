@@ -160,31 +160,31 @@ width:800px;
         color:white;
         font-weight: bold;
         position: relative;
-        left:-25px;
+        left:200px;
     }
     .pclass2{
         color:white;
         font-weight: bold;
         position: relative;
-        left:5px;
+        left:280px;
     }
     .pclass3{
         color:white;
         font-weight: bold;
         position: relative;
-        left:40px;
+        left:410px;
     }
     .pclass4{
         color:white;
         font-weight: bold;
         position: relative;
-        left:58px;
+        left:470px;
     }
     .pclass5{
         color:white;
         font-weight: bold;
         position: relative;
-        right:-10px;
+        left:500px;
     }
     
     
@@ -192,7 +192,7 @@ width:800px;
         color:white;
         font-weight: bold;
         position: relative;
-        right:10px;
+        left:535px;
     }
     .classHeading{
         background-color: black;
