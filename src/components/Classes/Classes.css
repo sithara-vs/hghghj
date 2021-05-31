@@ -64,7 +64,7 @@ width:800px;
     width:190px;
     height:25px;
     position:relative;
-    left:500px;
+    left:600px;
     bottom:6px;
 }
 .searchicon{
@@ -77,7 +77,7 @@ width:800px;
 }
 .searchbutton{
     position:relative;
-    left: 697px;
+    left: 790px;
     top: -37px;
     height: 31px;
     width: 32px;
@@ -153,6 +153,14 @@ width:800px;
     position:relative;
     left :-20px;
 }
+.log{
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
 
 @media only screen and (max-width: 900px) and (min-width: 600px) {
 

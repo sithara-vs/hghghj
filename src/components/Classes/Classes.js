@@ -271,7 +271,7 @@ class Classes extends React.Component {
     return (
       <div className="wholeClass">
         <h1 className="classHeading">Our Classes</h1>
-        <span>
+        <div className="Searching">
           <input
             className="search"
             placeholder="search by day of the week"
@@ -282,7 +282,7 @@ class Classes extends React.Component {
           <button className="searchbutton" onClick={() => this.day()}>
             <img className="searchicon" src={search} alt="search" />
           </button>
-        </span>
+        </div>
         <span className="Class-titles">
           <p className="pclass1"> Day</p>
           <p className="pclass2"> Description</p>
@@ -337,7 +337,7 @@ class Classes extends React.Component {
                       />
                     </div>
                   ) : (
-                    <div>Please Log in</div>
+                    <div className="log">Please Log in</div>
                   )}
                 </li>
               </div>

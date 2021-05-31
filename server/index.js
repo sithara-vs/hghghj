@@ -123,7 +123,7 @@ app.post("/api/checkout", async (req, res) => {
     console.log("TOKEN:", token);
     const charge = await stripe.charges.create(
       {
-        amount: classData.price * 100,
+        amount: classData.total * 100,
 
         currency: "usd",
         customer: customer.id, //classData.class_id,
