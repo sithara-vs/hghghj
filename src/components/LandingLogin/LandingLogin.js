@@ -34,8 +34,9 @@ function LandingLogin(props) {
 
   return (
     <div>
-      <div >
-        <form className="loginBody"
+      <div>
+        <form
+          className="loginBody"
           onSubmit={(e) => {
             e.preventDefault();
             handleSubmit();

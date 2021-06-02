@@ -1,53 +1,40 @@
-
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../Header/Header";
 import axios from "axios";
 import "./Instructors.css";
 
-
-export default function PersonList(props){
+export default function PersonList(props) {
   const [instructors, setInstructors] = useState([]);
-
-
 
   axios.get("/api/instructors").then((res) => {
     const instructors = res.data;
-    setInstructors(instructors );
-  }); 
+    setInstructors(instructors);
+  });
 
   useEffect(() => {
     axios.get("/api/instructors").then((res) => {
       const instructors = res.data;
-      setInstructors(instructors );
-    }); 
-},[]);
- 
-  
-    return (
-      <div className="bod">
-       
-       
-          <h1 className="meet"> Meet our Instructors!</h1>
-          <div className="layout">
-            {instructors.map((instructors) => {
-              return (
-                <div classname="instructors">
-                  <img className="layout1" src={instructors.image} />
+      setInstructors(instructors);
+    });
+  }, []);
 
-                  <p className="about">{instructors.about}</p>
-                </div>
-              );
-            })}
-          </div>
-        
+  return (
+    <div className="bod">
+      <h1 className="meet"> Meet our Instructors!</h1>
+      <div className="layout">
+        {instructors.map((instructors) => {
+          return (
+            <div classname="instructors">
+              <img className="layout1" src={instructors.image} />
+
+              <p className="about">{instructors.about}</p>
+            </div>
+          );
+        })}
       </div>
-    );
-  }
-
-
-
-
-
+    </div>
+  );
+}
 
 // import React from "react";
 // import Header from "../Header/Header";
@@ -58,7 +45,6 @@ export default function PersonList(props){
 //   state = {
 //     instructors: [],
 //   };
-
 
 //   componentDidMount() {
 //     axios.get("/api/instructors").then((res) => {
@@ -71,7 +57,7 @@ export default function PersonList(props){
 //     return (
 //       <div className="bod">
 //         {/* <Header /> */}
-       
+
 //           <h1 className="meet"> Meet our Instructors!</h1>
 //           <div className="layout">
 //             {this.state.instructors.map((instructors) => {
@@ -84,7 +70,7 @@ export default function PersonList(props){
 //               );
 //             })}
 //           </div>
-        
+
 //       </div>
 //     );
 //   }
